@@ -65,8 +65,8 @@ const handleNewItemSubmit = function () {
 
 const handleItemCheckClicked = function () {
   $('.js-shopping-list').on('click', '.js-item-toggle', event => {
-    const id = getItemIdFromElement(event.currentTarget);
-    toggleCheckedForListItem(id);
+    const id = $(this).id;
+    store.findAndToggleChecked(id);
     render();
   });
 };
